@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <header>
+    <h1>基于时间序列分析的交通数据可视化平台</h1>
+    <div class="showTime">当前时间：2020年3月17-0时54分14秒</div>
+    <script>
+      var t = null;
+      t = setTimeout(time, 1000); //開始运行
+      function time() {
+        clearTimeout(t); //清除定时器
+        dt = new Date();
+        var y = dt.getFullYear();
+        var mt = dt.getMonth() + 1;
+        var day = dt.getDate();
+        var h = dt.getHours(); //获取时
+        var m = dt.getMinutes(); //获取分
+        var s = dt.getSeconds(); //获取秒
+        document.querySelector(".showTime").innerHTML =
+          "当前时间：" +
+          y +
+          "年" +
+          mt +
+          "月" +
+          day +
+          "-" +
+          h +
+          "时" +
+          m +
+          "分" +
+          s +
+          "秒";
+        t = setTimeout(time, 1000); //设定定时器，循环运行
+      }
+    </script>
+  </header>
+  <section class="mainbox">
+    <div class="column">
+
+      <div class="panel line">
+        <h2>2022-2023年全国高快速路安全风险变化趋势</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+
+      <div class="panel pie">
+        <h2>2022年末公共汽电车构成(按燃料类型分类)</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+
+      <div class="panel line1">
+        <h2>2017－2024年全国公路里程(万公里)</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+
+    </div>
+
+
+    <div class="column">
+      <div class="no">
+        <div class="no-hd">
+          <ul>
+            <li>140967</li>
+            <li>140959</li>
+          </ul>
+        </div>
+        <div class="no-bd">
+          <ul>
+            <li>2023年中国人口(万人)</li>
+            <li>2024年中国人口(万人)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="map">
+        <div class="chart"></div>
+        <div class="map1"></div>
+        <div class="map2"></div>
+        <div class="map3"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="panel bar1">
+
+        <h2>
+
+          城市人口排名TOP5
+          <a href="../index_CQ.html">重庆市</a>
+          <a href="../index_SH.html">上海市</a>
+          <a href="../index_BJ.html">北京市</a>
+        </h2>
+        <div class="chart"></div>
+
+        <div class="panel-footer"></div>
+      </div>
+
+      <div class="panel bar">
+        <h2>
+          2017－2024年全国铁路营业里程(万公里)
+        </h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+
+
+      <div class="panel pie1">
+        <h2>2022年全国城市客运量构成(按运输方式分类)</h2>
+        <div class="chart"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </section>
+  <script src="js/flexible.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/china.js"></script>
+  <script src="js/myMap.js"></script>
+</body>
+
+</html>

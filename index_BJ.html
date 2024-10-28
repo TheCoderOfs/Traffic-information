@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>北京市物流大数据服务平台</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .t_title {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            line-height: 80px;
+            color: #fff;
+        }
+
+        #chart_map {
+            cursor: pointer;
+        }
+
+        .t_show {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 2px;
+            background: #2C58A6;
+            padding: 2px 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .t_a {
+            display: inline-block;
+            padding: 0px 0px;
+            width: 60px;
+            border-style: solid;
+            border-width: 0;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            line-height: normal;
+            margin: 0 0 0.1em 0;
+            position: relative;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            font-size: 1em;
+            background-color: #2C58A6;
+            border-color: #0263ff;
+            color: white;
+            box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset !important;
+            margin-right: 0.0em;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!--header-->
+    <div class="header">
+        <div class="bg_header">
+            <div class="header_nav fl t_title">
+                北京市交通大数据服务平台
+            </div>
+        </div>
+        <div class="header_nav fl"></div>
+        <div class="header_myself fr t_height">
+            <a class="t_a" href="home.html">返回 &nbsp;</a>
+        </div>
+
+    </div>
+
+    <!--main-->
+    <div class="data_content">
+        <!-- <div class="data_time">
+            温馨提示: 点击模块后跳转至详情页面。
+        </div> -->
+
+        <div class="data_main">
+            <div class="main_left fl">
+                <div class="left_1 t_btn6" style="cursor: pointer;">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_1.png" alt="">
+                        北京市客运量
+                    </div>
+                    <div id="chart_1" class="chart" style="width:100%;height: 280px;"></div>
+                </div>
+                <div class="left_2" style="cursor: pointer;">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_2.png" alt="">
+                        &nbsp;&nbsp;北京市地图
+                    </div>
+                    <div id="chart_2" class="chart t_btn9" style="width:100%;height: 280px;"></div>
+                </div>
+            </div>
+            <div class="main_center fl">
+                <div class="center_text">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_3.png" alt="">
+                        &nbsp;&nbsp;&nbsp;
+                        中国地图
+                    </div>
+                    <div id="chart_map" style="width:100%;height:610px;"></div>
+                </div>
+            </div>
+            <div class="main_right fr">
+                <div class="right_1">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_4.png" alt="">
+                        北京货物周转量
+                    </div>
+                    <div id="chart_3" class="echart t_btn7" style="width:100%;height: 280px;"></div>
+                </div>
+                <div class="right_2">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_5.png" alt="">
+                        北京市高速公路
+                    </div>
+                    <div id="chart_4" class="echart fl t_btn4" style="width:100%;height: 280px;cursor: pointer;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="data_bottom">
+            <div class="bottom_1 fl t_btn5" style="cursor: pointer;">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="img/t_6.png" alt="">
+                    &nbsp;&nbsp;&nbsp;北京市飞机场
+                </div>
+                <div id="chart_5" class="echart fl" style="width:100%;height: 250px;margin-top: 15px;"></div>
+            </div>
+            <div class="bottom_center fl">
+                <div class="bottom_2 fl">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_7.png" alt="">
+                        北京市交通基础设施
+                    </div>
+                    <div class="main_table t_btn8">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>铁路里程(公里)</th>
+                                    <th>公路里程(公里)</th>
+                                    <th>客运总量(万人次)</th>
+                                    <th>日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1375</td>
+                                    <td>22426</td>
+                                    <td>39050</td>
+                                    <td>2024年</td>
+                                </tr>
+                                <tr>
+                                    <td>1366</td>
+                                    <td>22403</td>
+                                    <td>35650</td>
+                                    <td>2023年</td>
+                                </tr>
+                                <tr>
+                                    <td>1354</td>
+                                    <td>22363</td>
+                                    <td>28010</td>
+                                    <td>2022年</td>
+                                </tr>
+                                <tr>
+                                    <td>1340</td>
+                                    <td>22320</td>
+                                    <td>42308</td>
+                                    <td>2021年</td>
+                                </tr>
+                                <tr>
+                                    <td>1242</td>
+                                    <td>22264</td>
+                                    <td>36270</td>
+                                    <td>2020年</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="bottom_3 fl">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i>
+                        <i class="l_t_line"></i>
+                    </div>
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i>
+                        <i class="r_t_line"></i>
+                    </div>
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i>
+                        <i class="b_l_line"></i>
+                    </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                        <i class="r_b_line"></i>
+                        <i class="b_r_line"></i>
+                    </div>
+                    <div class="main_title">
+                        <img src="img/t_7.png" alt="">
+                        &nbsp;北京市快递业务量
+                    </div>
+                    <div class="main_table t_btn2">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>省内(亿件)</th>
+                                    <th>省外(亿件)</th>
+                                    <th>国际(亿件)</th>
+                                    <th>总业务量(亿件)</th>
+                                    <th>日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>6.13</td>
+                                    <td>14.72</td>
+                                    <td>0.19</td>
+                                    <td>21.04</td>
+                                    <td>2024年</td>
+                                </tr>
+                                <tr>
+                                    <td>5.68</td>
+                                    <td>14.94</td>
+                                    <td>0.12</td>
+                                    <td>20.02</td>
+                                    <td>2023年</td>
+                                </tr>
+                                <tr>
+                                    <td>5.99</td>
+                                    <td>13.34</td>
+                                    <td>0.23</td>
+                                    <td>19.56</td>
+                                    <td>2022年</td>
+                                </tr>
+                                <tr>
+                                    <td>5.91</td>
+                                    <td>16.07</td>
+                                    <td>0.11</td>
+                                    <td>22.10</td>
+                                    <td>2021年</td>
+                                </tr>
+                                <tr>
+                                    <td>6.76</td>
+                                    <td>16.95</td>
+                                    <td>0.12</td>
+                                    <td>23.83</td>
+                                    <td>2020年</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_4 fr">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+                <div class="main_title">
+                    <img src="img/t_7.png" alt="">
+                    &nbsp;北京市汽车保有量
+                </div>
+                <div class="main_table t_btn3">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>载客汽车(万辆)</th>
+                                <th>载货汽车(万辆)</th>
+                                <th>汽车拥有量(万辆)</th>
+                                <th>日期</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>581.6</td>
+                                <td>56.1</td>
+                                <td>754.0</td>
+                                <td>2024年</td>
+                            </tr>
+                            <tr>
+                                <td>570.3</td>
+                                <td>55.2</td>
+                                <td>722.3</td>
+                                <td>2023年</td>
+                            </tr>
+                            <tr>
+                                <td>561.2</td>
+                                <td>54.7</td>
+                                <td>712.8</td>
+                                <td>2022年</td>
+                            </tr>
+                            <tr>
+                                <td>555.9</td>
+                                <td>53.47</td>
+                                <td>685.0</td>
+                                <td>2021年</td>
+                            </tr>
+                            <tr>
+                                <td>541.2</td>
+                                <td>51.6</td>
+                                <td>657.0</td>
+                                <td>2020年</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/jquery-2.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/dataTool.js"></script>
+<script src="js/index_BJ.js"></script>
+<script src="js/china.js"></script>
+<script src="js/beijing.js"></script>
+
+</html>
